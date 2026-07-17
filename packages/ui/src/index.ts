@@ -11,3 +11,5 @@ export * from "./components/ApexCard";
 export * from "./components/ApexInput";
 export * from "./components/ApexText";
 export * from "./components/ApexAvatar";
+export * from "./components/ApexContainer";
+export * from "./components/ApexSection";

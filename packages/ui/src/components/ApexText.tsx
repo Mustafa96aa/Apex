@@ -1,7 +1,9 @@
-import type { ReactNode } from "react";
-import { colors } from "../tokens/colors";
+import type { HTMLAttributes, ReactNode } from "react";
 
-type ApexTextProps = {
+import { colors } from "../tokens/colors";
+import { typography } from "../tokens/typography";
+
+type ApexTextProps = HTMLAttributes<HTMLParagraphElement> & {
   children: ReactNode;
   variant?: "title" | "subtitle" | "body" | "caption";
 };
@@ -9,29 +11,42 @@ type ApexTextProps = {
 export function ApexText({
   children,
   variant = "body",
+  style,
+  ...props
 }: ApexTextProps) {
-  const styles = {
+  const variants = {
     title: {
-      fontSize: "32px",
-      fontWeight: 700,
+      ...typography.h2,
       color: colors.text,
     },
+
     subtitle: {
-      fontSize: "20px",
-      fontWeight: 600,
-      color: colors.text,
+      ...typography.h3,
+      color: colors.textSecondary,
     },
+
     body: {
-      fontSize: "16px",
-      fontWeight: 400,
+      ...typography.body,
       color: colors.text,
     },
+
     caption: {
-      fontSize: "14px",
-      fontWeight: 400,
+      ...typography.small,
       color: colors.muted,
     },
   };
 
-  return <p style={styles[variant]}>{children}</p>;
+  return (
+    <p
+      {...props}
+      style={{
+        fontFamily: typography.fontFamily,
+        margin: 0,
+        ...variants[variant],
+        ...style,
+      }}
+    >
+      {children}
+    </p>
+  );
 }

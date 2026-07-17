@@ -1,7 +1,10 @@
-import type { CSSProperties } from "react";
-import { colors } from "../tokens/colors";
+import type { CSSProperties, HTMLAttributes } from "react";
 
-type ApexAvatarProps = {
+import { colors } from "../tokens/colors";
+import { radius } from "../tokens/radius";
+import { typography } from "../tokens/typography";
+
+type ApexAvatarProps = HTMLAttributes<HTMLDivElement> & {
   name?: string;
   size?: number;
 };
@@ -9,20 +12,34 @@ type ApexAvatarProps = {
 export function ApexAvatar({
   name = "A",
   size = 48,
+  style,
+  ...props
 }: ApexAvatarProps) {
-  const style: CSSProperties = {
+  const avatarStyle: CSSProperties = {
     width: size,
     height: size,
-    borderRadius: "9999px",
+
+    borderRadius: radius.full,
+
     background: colors.primary,
-    color: colors.text,
+    color: colors.white,
+
     display: "flex",
-    justifyContent: "center",
     alignItems: "center",
-    fontWeight: 700,
+    justifyContent: "center",
+
+    fontFamily: typography.fontFamily,
+    fontWeight: typography.h3.fontWeight,
     fontSize: size / 2.4,
+
     userSelect: "none",
+
+    ...style,
   };
 
-  return <div style={style}>{name.charAt(0).toUpperCase()}</div>;
+  return (
+    <div {...props} style={avatarStyle}>
+      {name.charAt(0).toUpperCase()}
+    </div>
+  );
 }

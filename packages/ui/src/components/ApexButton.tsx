@@ -1,37 +1,65 @@
-import type { ReactNode } from "react";
-import { colors } from "../tokens/colors";
+import type { ButtonHTMLAttributes, ReactNode } from "react";
 
-type ApexButtonProps = {
+import { colors } from "../tokens/colors";
+import { radius } from "../tokens/radius";
+import { spacing } from "../tokens/spacing";
+import { typography } from "../tokens/typography";
+import { animations } from "../tokens/animations";
+import { shadows } from "../tokens/shadows";
+
+type ApexButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   children: ReactNode;
-  onClick?: () => void;
   variant?: "primary" | "secondary";
-  disabled?: boolean;
 };
 
 export function ApexButton({
   children,
-  onClick,
   variant = "primary",
   disabled = false,
+  style,
+  ...props
 }: ApexButtonProps) {
-  const style =
+  const baseStyle = {
+  borderRadius: radius.full,
+  padding: `${spacing.md}px ${spacing.xl}px`,
+
+  fontFamily: typography.fontFamily,
+  fontSize: typography.body.fontSize,
+  fontWeight: 600,
+  lineHeight: typography.body.lineHeight,
+
+  cursor: disabled ? "not-allowed" : "pointer",
+
+  transition: animations.transition.default,
+
+  boxShadow: shadows.xs,
+
+  border: "none",
+
+  opacity: disabled ? 0.5 : 1,
+};
+
+  const variantStyle =
     variant === "primary"
       ? {
-          backgroundColor: colors.primary,
-          color: colors.text,
+          background: colors.primary,
+          color: colors.white,
         }
       : {
-          backgroundColor: "transparent",
+          background: colors.surface,
           color: colors.primary,
-          border: `2px solid ${colors.primary}`,
+          border: `1px solid ${colors.border}`,
         };
 
   return (
     <button
-      onClick={onClick}
+      {...props}
       disabled={disabled}
-      style={style}
-      className="rounded-full px-6 py-3 font-medium transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
+      style={{
+        ...baseStyle,
+        ...variantStyle,
+        ...style,
+      }}
     >
       {children}
     </button>
