@@ -13,3 +13,4 @@ export * from "./components/ApexText";
 export * from "./components/ApexAvatar";
 export * from "./components/ApexContainer";
 export * from "./components/ApexSection";
+export * from "./components/ApexIcon";
