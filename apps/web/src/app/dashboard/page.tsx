@@ -1,18 +1,34 @@
 import ApexLayout from "@/components/layout/ApexLayout";
-import DashboardHeader from "@/components/dashboard/DashboardHeader";
+
 import {
-  ApexCard,
+  DashboardHeader,
+  AdvisorCard,
+  ProjectSummary,
+  TaskSummary,
+} from "@/components/dashboard";
+
+import {
   ApexContainer,
   ApexSection,
   ApexText,
 } from "@apex/ui";
 
+
 export default function DashboardPage() {
   return (
     <ApexLayout>
+
       <ApexContainer>
+
         <ApexSection>
-        <DashboardHeader />
+
+          <DashboardHeader />
+
+
+          <ApexText variant="body">
+            Your intelligent workspace and advisor.
+          </ApexText>
+
 
 
           <div
@@ -25,43 +41,21 @@ export default function DashboardPage() {
             }}
           >
 
-            <ApexCard>
-              <ApexText variant="subtitle">
-                Projects
-              </ApexText>
-
-              <ApexText variant="body">
-                Manage your active projects.
-              </ApexText>
-            </ApexCard>
+            <ProjectSummary />
 
 
-            <ApexCard>
-              <ApexText variant="subtitle">
-                Advisor
-              </ApexText>
-
-              <ApexText variant="body">
-                Your AI decision partner.
-              </ApexText>
-            </ApexCard>
+            <AdvisorCard />
 
 
-            <ApexCard>
-              <ApexText variant="subtitle">
-                Tasks
-              </ApexText>
-
-              <ApexText variant="body">
-                Stay focused and organized.
-              </ApexText>
-            </ApexCard>
-
+            <TaskSummary />
 
           </div>
 
+
         </ApexSection>
+
       </ApexContainer>
+
     </ApexLayout>
   );
 }
