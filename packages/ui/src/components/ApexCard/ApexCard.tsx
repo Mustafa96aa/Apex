@@ -1,9 +1,9 @@
 import type { HTMLAttributes, ReactNode } from "react";
 
-import { colors } from "../tokens/colors";
-import { radius } from "../tokens/radius";
-import { shadows } from "../tokens/shadows";
-import { spacing } from "../tokens/spacing";
+import { colors } from "../../tokens/colors";
+import { radius } from "../../tokens/radius";
+import { shadows } from "../../tokens/shadows";
+import { spacing } from "../../tokens/spacing";
 
 type ApexCardProps = HTMLAttributes<HTMLDivElement> & {
   children: ReactNode;

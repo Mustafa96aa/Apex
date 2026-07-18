@@ -1,11 +1,11 @@
 import type { ButtonHTMLAttributes, ReactNode } from "react";
 
-import { colors } from "../tokens/colors";
-import { radius } from "../tokens/radius";
-import { spacing } from "../tokens/spacing";
-import { typography } from "../tokens/typography";
-import { animations } from "../tokens/animations";
-import { shadows } from "../tokens/shadows";
+import { colors } from "../../tokens/colors";
+import { radius } from "../../tokens/radius";
+import { spacing } from "../../tokens/spacing";
+import { typography } from "../../tokens/typography";
+import { animations } from "../../tokens/animations";
+import { shadows } from "../../tokens/shadows";
 
 type ApexButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   children: ReactNode;

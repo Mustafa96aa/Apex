@@ -1,0 +1,28 @@
+.sidebar {
+  width: 260px;
+  min-height: 100vh;
+
+  padding: 24px;
+
+  background: #ffffff;
+
+  border-right: 1px solid #e2e8f0;
+}
+
+
+.logo {
+  margin-bottom: 32px;
+
+  font-size: 24px;
+  font-weight: 700;
+
+  color: #2563eb;
+}
+
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+}

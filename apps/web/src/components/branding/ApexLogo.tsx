@@ -5,7 +5,7 @@ type ApexLogoProps = {
 };
 
 export default function ApexLogo({
-  size = "md",
+  size = "sm",
 }: ApexLogoProps) {
   const fontSize = {
     sm: 28,

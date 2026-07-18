@@ -1,10 +1,10 @@
 import type { InputHTMLAttributes } from "react";
 
-import { animations } from "../tokens/animations";
-import { colors } from "../tokens/colors";
-import { radius } from "../tokens/radius";
-import { spacing } from "../tokens/spacing";
-import { typography } from "../tokens/typography";
+import { animations } from "../../tokens/animations";
+import { colors } from "../../tokens/colors";
+import { radius } from "../../tokens/radius";
+import { spacing } from "../../tokens/spacing";
+import { typography } from "../../tokens/typography";
 
 type ApexInputProps = InputHTMLAttributes<HTMLInputElement>;
 

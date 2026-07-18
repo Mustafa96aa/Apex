@@ -1,7 +1,7 @@
 import type { HTMLAttributes, ReactNode } from "react";
 
-import { colors } from "../tokens/colors";
-import { typography } from "../tokens/typography";
+import { colors } from "../../tokens/colors";
+import { typography } from "../../tokens/typography";
 
 type ApexTextProps = HTMLAttributes<HTMLParagraphElement> & {
   children: ReactNode;

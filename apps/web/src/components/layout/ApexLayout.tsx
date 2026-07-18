@@ -1,5 +1,8 @@
 import type { ReactNode } from "react";
+
 import ApexHeader from "./ApexHeader";
+import { ApexSidebar } from "./ApexSidebar";
+
 import { colors } from "@apex/ui";
 
 type ApexLayoutProps = {
@@ -15,19 +18,29 @@ export default function ApexLayout({
         minHeight: "100vh",
         background: colors.background,
         color: colors.text,
+        display: "flex",
       }}
     >
-      <ApexHeader />
+      <ApexSidebar />
 
-      <main
+      <div
         style={{
-          maxWidth: 1280,
-          margin: "0 auto",
-          padding: "48px 32px",
+          flex: 1,
+          display: "flex",
+          flexDirection: "column",
         }}
       >
-        {children}
-      </main>
+        <ApexHeader />
+
+        <main
+          style={{
+            flex: 1,
+            padding: "32px",
+          }}
+        >
+          {children}
+        </main>
+      </div>
     </div>
   );
 }

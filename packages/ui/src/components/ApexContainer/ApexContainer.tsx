@@ -1,6 +1,6 @@
 import type { HTMLAttributes, ReactNode } from "react";
 
-import { spacing } from "../tokens/spacing";
+import { spacing } from "../../tokens/spacing";
 
 type ApexContainerProps = HTMLAttributes<HTMLDivElement> & {
   children: ReactNode;

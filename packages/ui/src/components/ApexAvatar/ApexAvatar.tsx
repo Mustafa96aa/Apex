@@ -1,8 +1,8 @@
 import type { CSSProperties, HTMLAttributes } from "react";
 
-import { colors } from "../tokens/colors";
-import { radius } from "../tokens/radius";
-import { typography } from "../tokens/typography";
+import { colors } from "../../tokens/colors";
+import { radius } from "../../tokens/radius";
+import { typography } from "../../tokens/typography";
 
 type ApexAvatarProps = HTMLAttributes<HTMLDivElement> & {
   name?: string;

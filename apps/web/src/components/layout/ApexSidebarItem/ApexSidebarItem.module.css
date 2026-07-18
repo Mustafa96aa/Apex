@@ -1,0 +1,45 @@
+"use client";
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import type { LucideIcon } from "lucide-react";
+
+import styles from "./ApexSidebarItem.module.css";
+
+type ApexSidebarItemProps = {
+  icon: LucideIcon;
+  label: string;
+  href: string;
+};
+
+export function ApexSidebarItem({
+  icon: Icon,
+  label,
+  href,
+}: ApexSidebarItemProps) {
+
+  const pathname = usePathname();
+
+  const active = pathname === href;
+
+  return (
+    <Link
+      href={href}
+      className={`${styles.item} ${
+        active ? styles.active : ""
+      }`}
+    >
+
+      <Icon
+        className={styles.icon}
+        size={20}
+        strokeWidth={active ? 2.5 : 2}
+      />
+
+      <span>
+        {label}
+      </span>
+
+    </Link>
+  );
+}
