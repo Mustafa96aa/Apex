@@ -4,26 +4,51 @@ import { runAdvisorEngine } from "./advisor.engine";
 
 export function useAdvisor() {
 
-  const decision =
-    runAdvisorEngine();
+  const decision = runAdvisorEngine();
 
 
   return {
     ...advisorMock,
 
-    decision:{
+
+    decision: {
       ...advisorMock.decision,
+
 
       action:
         decision.decision,
 
+
       reason:
         decision.reason,
 
+
       impact:
         decision.priority,
-      project:
-    decision.project,
-    }
+    },
+
+
+    focus:
+      decision.decision,
+
+
+    insight:
+      decision.reason,
+
+
+    priority:
+      decision.priority,
+
+
+    recommendation:
+      advisorMock.recommendation,
+
+
+    action:
+      decision.decision,
+
+
+    status:
+      advisorMock.status,
   };
 }

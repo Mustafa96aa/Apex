@@ -8,7 +8,7 @@ import AdvisorPriority from "./AdvisorPriority";
 import AdvisorStatus from "./AdvisorStatus";
 import AdvisorDecision from "./AdvisorDecision";
 import AdvisorProjectInsight from "./AdvisorProjectInsight";
-
+import AdvisorFocusSession from "./AdvisorFocusSession";
 
 export default function AdvisorPanel() {
 
@@ -72,7 +72,18 @@ export default function AdvisorPanel() {
       <AdvisorAction
         label={advisor.action}
       />
+      <AdvisorFocusSession
 
+       project={
+       advisor.decision.project?.name || "Apex Core Platform"
+      }
+
+      goal={
+      "Complete the current priority task"
+      }
+      
+
+/>
     </div>
   );
 }
